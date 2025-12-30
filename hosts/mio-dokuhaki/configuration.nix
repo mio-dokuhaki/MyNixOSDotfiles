@@ -41,6 +41,7 @@
     curl
     wget
     fish
+    fastfetch
   ];
   services.openssh.enable = true;
   services.logind.settings.Login = {
