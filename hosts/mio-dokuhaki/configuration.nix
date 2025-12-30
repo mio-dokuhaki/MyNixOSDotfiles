@@ -43,24 +43,24 @@
     wget
     fish
     fastfetch
-    greetd
-    tuigreet
+    # greetd
+    # tuigreet
   ];
   services.openssh.enable = true;
-  services.greetd = {
-    enable = true;
-    useTextGreeter = true;
-    restart = true;
-    settings = {
-      terminal = {
-        vt = 1;
-      };
-      default_session = {
-        command = "${pkgs.greetd}/bin/tuigreet --time --time-format '%Y/%m/%d (%a) %H:%M:%S' -r --remember-session --user-menu --theme 'title=yellow;border=magenta;text=cyan;prompt=green;time=red;action=green;button=yellow;container=black;input=red' --asterisks";
-	user = "greeter";
-      };
-    };
-  };
+	#  services.greetd = {
+	#    enable = true;
+	#    useTextGreeter = true;
+	#    restart = true;
+	#    settings = {
+	#      terminal = {
+	#        vt = 1;
+	#      };
+	#      default_session = {
+	#        command = "${pkgs.greetd}/bin/tuigreet --time --time-format '%Y/%m/%d (%a) %H:%M:%S' -r --remember-session --user-menu --theme 'title=yellow;border=magenta;text=cyan;prompt=green;time=red;action=green;button=yellow;container=black;input=red' --asterisks";
+	# user = "greeter";
+	#      };
+	#    };
+	#  };
   services.logind.settings.Login = {
     HandleLidSwitch = "ignore";
     HandleLidSwitchExternalPower = "ignore";
