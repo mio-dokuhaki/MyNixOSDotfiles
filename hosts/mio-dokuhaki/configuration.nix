@@ -24,7 +24,7 @@
   users.users.mio-dokuhaki = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
-    shell = pkgs.bash;
+    shell = pkgs.fish;
   };
 
   security.sudo.wheelNeedsPassword = true;
@@ -33,12 +33,20 @@
   #   { device = "/dev/sda2"; }
   # ];
 
+  programs.fish.enable = true;
+
   environment.systemPackages = with pkgs; [
     git
     neovim
     curl
     wget
+    fish
   ];
   services.openssh.enable = true;
+  services.logind.settings.Login = {
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
+    HandleLidSwitchDocked = "ignore";
+  };
 }
 
