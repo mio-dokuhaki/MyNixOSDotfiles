@@ -29,9 +29,9 @@
 
   security.sudo.wheelNeedsPassword = true;
 
-  swapDevices = [
-    { device = "/dev/sda2"; }
-  ];
+  # swapDevices = [
+  #   { device = "/dev/sda2"; }
+  # ];
 
   environment.systemPackages = with pkgs; [
     git
@@ -39,5 +39,6 @@
     curl
     wget
   ];
+  services.openssh.enable = true;
 }
 
